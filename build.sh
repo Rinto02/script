@@ -5,7 +5,7 @@ rm -rf .repo/local_manifests/
 repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
 # Clone local_manifests repository
 
-git clone https://github.com/Rinto02/Local_Manifest.git --depth 1 -b lineage-21.0 .repo/local_manifests
+git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b lineage-21.0 .repo/local_manifests
 
 # repo sync
 /opt/crave/resync.sh
