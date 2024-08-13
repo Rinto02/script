@@ -11,12 +11,8 @@ git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b matrixx .re
 /opt/crave/resync.sh
 
 # remove and clone
-rm -rf frameworks/base
-git clone --depth=1 https://github.com/Rinto02/matrixx_frameworks_base frameworks/base
 rm -rf frameworks/av
 git clone --depth=1 https://github.com/Rinto02/matrixx_frameworks_av frameworks/av
-rm -rf frameworks/native
-git clone --depth=1 https://github.com/Rinto02/matrixx_frameworks_native frameworks/native
 
 # Set up build environment
 . build/envsetup.sh
