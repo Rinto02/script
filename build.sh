@@ -16,7 +16,4 @@ export BUILD_HOSTNAME=crave
 
 source build/envsetup.sh
 # build
-lunch lineage_RMX2020-userdebug
-
-
-m bacon
+brunch RMX2020 userdebug
