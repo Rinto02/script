@@ -2,10 +2,10 @@
 
 rm -rf .repo/local_manifests
 
-repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b QPR3 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/ProjectMatrixx/android.git -b 14.0 --git-lfs
 
 # Clone local_manifests repository
-git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b infinity .repo/local_manifests
+git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b matrixx .repo/local_manifests
 
 # repo sync
 /opt/crave/resync.sh
@@ -15,5 +15,5 @@ git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b infinity .r
 export TZ=Asia/Dhaka
 export BUILD_USERNAME=rinto
 export BUILD_HOSTNAME=crave
-lunch infinity_RMX2020-userdebug
-mka bacon
+make installclean
+brunch RMX2020 userdebug
