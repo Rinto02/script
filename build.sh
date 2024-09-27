@@ -1,19 +1,21 @@
-# Clone Lineage 21.0
+#!/usr/bin/env bash
 
+# Clone Lineage 17.1
 rm -rf .repo/local_manifests/
+repo init -u https://github.com/DotOS/manifest.git -b dot11 --depth=1
 
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
 # Clone local_manifests repository
-
-git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b lineage-21.0 .repo/local_manifests
+git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b dot11 .repo/local_manifests
 
 # repo sync
 /opt/crave/resync.sh
 
 # Set up build environment
+source build/envsetup.sh
 export BUILD_USERNAME=rinto
 export BUILD_HOSTNAME=crave
-
-source build/envsetup.sh
-# build
-brunch RMX2020 userdebug
+export KBUILD_USERNAME=rinto
+export KBUILD_HOSTNAME=crave
+export TZ=Asia/Dhaka
+lunch dot_RMX2020-userdebug
+make bacon
